@@ -4180,7 +4180,7 @@ const CLAW_XIAOTIAN_HOME = {
   id: 'xiaotian',
   name: '小天',
   desc: '开箱即用，越用越强，7x24不断线，全设备可用的超级助理',
-  icon: './custom-assets/claw-flow/claw-avatar.png',
+  icon: './custom-assets/claw-flow/xiaotian-avatar.png',
 };
 let activeClawHomeAgent = CLAW_XIAOTIAN_HOME;
 
@@ -5409,7 +5409,7 @@ function renderClawAgentHome() {
   const isXiaotian = (agent.id || agent.name) === (CLAW_XIAOTIAN_HOME.id || CLAW_XIAOTIAN_HOME.name);
   main?.classList.toggle('is-custom-agent-home', !isXiaotian);
   if (avatar) {
-    avatar.src = isXiaotian ? './custom-assets/claw-flow/claw-avatar-hero.png' : agent.icon || CLAW_XIAOTIAN_HOME.icon;
+    avatar.src = isXiaotian ? './custom-assets/claw-flow/xiaotian-avatar.png' : agent.icon || CLAW_XIAOTIAN_HOME.icon;
     avatar.alt = agent.name || '';
   }
   if (title) title.innerHTML = `Hi，我是<span class="claw-agent-name-underline">${escapeHtml(agent.name || '小天')}</span>`;
