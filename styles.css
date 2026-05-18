@@ -2224,14 +2224,14 @@ textarea {
 
 .loading-mascot-wrap {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   margin-bottom: 42px;
 }
 
 .loading-mascot {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
 }
 

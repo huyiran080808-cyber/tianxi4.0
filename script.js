@@ -547,7 +547,7 @@ function createFileAnalysisCard(msg) {
   fileCard?.addEventListener('click', () => {
     openPreview(
       msg.fileName || '文件',
-      'https://www.figma.com/api/mcp/asset/a3d8d6f5-e399-4108-be4b-06175be4e067'
+      './figma-assets/a3d8d6f5-e399-4108-be4b-06175be4e067.png'
     );
   });
   return el;
@@ -2079,21 +2079,16 @@ document.addEventListener('keydown', e => {
 
 // Inline SVG icons (replacing expired Figma URLs)
 const READ_ICON_MARKUP = `
-  <span class="step-icon-wrap" aria-hidden="true">
-    <span class="step-icon-core">
-      <img class="step-icon-part" style="left:10.41%;top:14.58%;width:39.59%;height:72.92%;" src="https://www.figma.com/api/mcp/asset/64942a22-9a88-400a-855b-1b21d266b9f8" alt="" />
-      <img class="step-icon-part" style="left:50%;top:14.58%;width:39.58%;height:72.92%;" src="https://www.figma.com/api/mcp/asset/15535590-1528-4466-ba4c-1a0cc0fcfb81" alt="" />
-    </span>
-  </span>
+  <svg class="step-icon-wrap" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+    <path d="M4.2 4.1h4.6c.6 0 1.2.2 1.6.7.4-.5 1-.7 1.6-.7h4.2v11.2h-4.6c-.5 0-1 .2-1.2.6-.3-.4-.7-.6-1.2-.6h-5V4.1Z" fill="none" stroke="rgba(255,255,255,0.72)" stroke-width="1.35" stroke-linejoin="round"/>
+    <path d="M10 4.8v11" stroke="rgba(255,255,255,0.72)" stroke-width="1.35" stroke-linecap="round"/>
+  </svg>
 `;
 const TOOL_ICON_MARKUP = `
-  <span class="step-icon-wrap" aria-hidden="true">
-    <span class="step-icon-core">
-      <img class="step-icon-part" style="left:8.33%;top:27.08%;width:25%;height:50%;" src="https://www.figma.com/api/mcp/asset/aa6f2e8b-826c-4b01-a2c6-cc5ef022f8d9" alt="" />
-      <img class="step-icon-part" style="left:66.67%;top:27.08%;width:25%;height:50%;" src="https://www.figma.com/api/mcp/asset/48735b2c-d445-4673-ba0c-7a1ebce766fe" alt="" />
-      <img class="step-icon-part" style="left:41.67%;top:8.33%;width:14.58%;height:83.34%;" src="https://www.figma.com/api/mcp/asset/221443da-ed39-47b0-9a09-fa60c01bb5dd" alt="" />
-    </span>
-  </span>
+  <svg class="step-icon-wrap" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+    <path d="M5.4 6.9v6.2M14.6 6.9v6.2M10 4.2v11.6" stroke="rgba(255,255,255,0.72)" stroke-width="1.45" stroke-linecap="round"/>
+    <path d="M3.7 10h12.6" stroke="rgba(255,255,255,0.72)" stroke-width="1.45" stroke-linecap="round"/>
+  </svg>
 `;
 const EXEC_STATUS_ICON_SVG = '<img class="execution-status-icon" src="./figma-assets/31648c85-08b3-4367-ae29-587fd6237d54.svg" alt="" />';
 const EXEC_TOGGLE_ARROW_SVG = '<svg viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1.25L5 4.75L9 1.25" fill="none" stroke="rgba(255,255,255,0.56)" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -2101,20 +2096,20 @@ const PDF_ICON_SVG = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none
 const PPT_FILE_ICON_SVG = `<svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.11111C0 1.39289 1.39289 0 3.11111 0H17.1111L24.8889 7.77778V24.8889C24.8889 26.6071 23.496 28 21.7778 28H3.11111C1.39289 28 0 26.6071 0 24.8889V3.11111Z" fill="#EA5355"/><path d="M17.1133 4.66667C17.1133 6.38489 18.5062 7.77778 20.2244 7.77778H24.8911L17.1133 0V4.66667Z" fill="#F78E8F"/><path opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M10.7016 9.64062H13.0711C13.0711 12.5907 15.6112 15.754 18.7769 16.8096L18.2355 19.1069C14.5201 18.5761 10.6803 20.1613 7.21247 22.474L5.81445 20.5629C7.10111 19.5334 8.33558 17.787 9.25032 15.7457C10.1625 13.7126 10.7016 11.509 10.7016 9.64062ZM10.6582 17.0594C11.1813 15.8898 11.6456 14.6772 12.0374 13.4489C12.9726 14.8776 14.0968 16.1732 15.3795 17.3003C13.4557 17.6451 11.5731 18.2113 9.74734 18.9322C10.0705 18.317 10.3742 17.6921 10.6582 17.0594Z" fill="white"/></svg>`;
 const DL_ICON_SVG = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3v9M6 9l3 3 3-3" stroke="rgba(255,255,255,0.48)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 14h12" stroke="rgba(255,255,255,0.48)" stroke-width="1.3" stroke-linecap="round"/></svg>';
 
-// Asset URLs from Figma
+// Local image assets
 const ASSETS = {
-  clawIcon: 'https://www.figma.com/api/mcp/asset/592375f5-4355-4637-b3d4-88d5909b7e05',
-  clawIconAlt: 'https://www.figma.com/api/mcp/asset/ef0e2595-ae3a-4867-a047-8b19294807e0',
+  clawIcon: './custom-assets/claw-flow/claw-red.svg',
+  clawIconAlt: './custom-assets/claw-flow/claw-avatar.png',
   continueIcon: './send.svg',
   continueIconWhite: './send-dark.svg',
-  arrowIcon: 'https://www.figma.com/api/mcp/asset/e4fa9311-c1e2-47a1-b334-1af7e23d4dcf',
-  timelineBar: 'https://www.figma.com/api/mcp/asset/06106c6c-3608-486d-88e3-73b592d2d44d',
-  fileIcon: 'https://www.figma.com/api/mcp/asset/20da8605-e537-44d2-aaf3-ab40bb1de6c7',
-  toolsIcon: 'https://www.figma.com/api/mcp/asset/02da8605-e537-44d2-aaf3-ab40bb1de6c7',
-  puzzleIcon: 'https://www.figma.com/api/mcp/asset/2af548b1-1883-4f55-a6ec-6480a2b61a53',
-  readIcon: 'https://www.figma.com/api/mcp/asset/0b2647c3-3e9e-4592-a429-aa06b9e7960d',
-  pdfIcon: 'https://www.figma.com/api/mcp/asset/b3a1c109-b8ea-41d7-87ba-9d330ceee1eb',
-  downloadIcon: 'https://www.figma.com/api/mcp/asset/e1c5f0ff-2ee8-47ab-8116-89573de828de',
+  arrowIcon: './custom-assets/claw-flow/followup-arrow.svg',
+  timelineBar: './custom-assets/claw-flow/xiaotian-wave.svg',
+  fileIcon: './文件.svg',
+  toolsIcon: './图片.svg',
+  puzzleIcon: './custom-assets/claw-flow/skill-button.svg',
+  readIcon: './custom-assets/claw-flow/feature-write.svg',
+  pdfIcon: './ppt-submit-icon.svg',
+  downloadIcon: './send.svg',
 };
 
 // State
@@ -2660,7 +2655,7 @@ function showResult() {
   result.querySelectorAll('.attachment-card').forEach(card => {
     card.addEventListener('click', () => {
       const name = card.querySelector('.attachment-name').textContent;
-      openPreview(name, 'https://www.figma.com/api/mcp/asset/a3d8d6f5-e399-4108-be4b-06175be4e067');
+      openPreview(name, './figma-assets/a3d8d6f5-e399-4108-be4b-06175be4e067.png');
     });
   });
 
@@ -4117,15 +4112,10 @@ const CLAW_AGENT_AVATAR_FILES = Array.from({ length: 24 }, (_, index) => {
   return `${CLAW_AVATAR_DIR}avatar-${avatarNumber}.png`;
 });
 const CLAW_AGENT_AVATARS = {
-  '课程预习导师': CLAW_AGENT_AVATAR_FILES[0],
   '学习规划师': CLAW_AGENT_AVATAR_FILES[0],
-  '论文解读专家': CLAW_AGENT_AVATAR_FILES[1],
   '论文速读导师': CLAW_AGENT_AVATAR_FILES[1],
   'AI论文速读导师': CLAW_AGENT_AVATAR_FILES[1],
-  '笔记整理大师': CLAW_AGENT_AVATAR_FILES[2],
   '资料整理大师': CLAW_AGENT_AVATAR_FILES[2],
-  '课程辅导专家': CLAW_AGENT_AVATAR_FILES[6],
-  '考前冲刺教练': CLAW_AGENT_AVATAR_FILES[3],
   '考前冲刺哥': CLAW_AGENT_AVATAR_FILES[3],
   '外语一对一私教': CLAW_AGENT_AVATAR_FILES[4],
   '论文猎手': CLAW_AGENT_AVATAR_FILES[5],
@@ -4135,38 +4125,24 @@ const CLAW_AGENT_AVATARS = {
   '留学规划顾问': CLAW_AGENT_AVATAR_FILES[9],
   '高考志愿填报顾问': CLAW_AGENT_AVATAR_FILES[10],
   '跨境电商情报探长': CLAW_AGENT_AVATAR_FILES[11],
-  '广告创意顾问': CLAW_AGENT_AVATAR_FILES[12],
   'TikTok策略师': CLAW_AGENT_AVATAR_FILES[12],
   '库存预测专家': CLAW_AGENT_AVATAR_FILES[13],
-  '广告投放优化师': CLAW_AGENT_AVATAR_FILES[14],
   'PPC竞价策略师': CLAW_AGENT_AVATAR_FILES[14],
-  '用户反馈分析师': CLAW_AGENT_AVATAR_FILES[15],
   '产品经理': CLAW_AGENT_AVATAR_FILES[15],
   'UI设计师': CLAW_AGENT_AVATAR_FILES[16],
-  '前端开发工程师': CLAW_AGENT_AVATAR_FILES[17],
   '前端开发者': CLAW_AGENT_AVATAR_FILES[17],
   '后端架构师': CLAW_AGENT_AVATAR_FILES[18],
-  'A股盯盘师': CLAW_AGENT_AVATAR_FILES[19],
   'A股行情追踪专家': CLAW_AGENT_AVATAR_FILES[19],
-  '宏观经济分析师': CLAW_AGENT_AVATAR_FILES[20],
   '宏观经济专家': CLAW_AGENT_AVATAR_FILES[20],
-  '基金配置顾问': CLAW_AGENT_AVATAR_FILES[21],
   '基金掘金师': CLAW_AGENT_AVATAR_FILES[21],
-  '股票诊断师': CLAW_AGENT_AVATAR_FILES[22],
   '个股诊断专家': CLAW_AGENT_AVATAR_FILES[22],
   '自媒体热点猎手': CLAW_AGENT_AVATAR_FILES[23],
-  '抖音运营专家': CLAW_AGENT_AVATAR_FILES[4],
   '抖音运营策略师': CLAW_AGENT_AVATAR_FILES[4],
-  '小红书爆款顾问': CLAW_AGENT_AVATAR_FILES[10],
   '小红书爆款操盘手': CLAW_AGENT_AVATAR_FILES[10],
-  '公众号主笔': CLAW_AGENT_AVATAR_FILES[16],
   '公众号内容助手': CLAW_AGENT_AVATAR_FILES[16],
   '高级项目经理': CLAW_AGENT_AVATAR_FILES[15],
   '高级数据分析师': CLAW_AGENT_AVATAR_FILES[20],
   '金融风控分析师': CLAW_AGENT_AVATAR_FILES[14],
-  '实验数据分析师': CLAW_AGENT_AVATAR_FILES[20],
-  '论文润色专家': CLAW_AGENT_AVATAR_FILES[21],
-  '论文评审顾问': CLAW_AGENT_AVATAR_FILES[22],
 };
 
 function clawAvatar(name, fallbackIndex = 0) {
@@ -4180,58 +4156,58 @@ const CLAW_XIAOTIAN_HOME = {
   id: 'xiaotian',
   name: '小天',
   desc: '开箱即用，越用越强，7x24不断线，全设备可用的超级助理',
-  icon: './custom-assets/claw-flow/xiaotian-avatar.png',
+  icon: './custom-assets/claw-flow/claw-avatar.png',
 };
 let activeClawHomeAgent = CLAW_XIAOTIAN_HOME;
 
 const CLAW_EXPERTS = [
   {
     id: 'planner',
-    name: '课程预习导师',
-    desc: '课前梳理课程重点，提前建立知识框架',
-    icon: clawAvatar('课程预习导师'),
+    name: '学习规划师',
+    desc: '梳理学期节奏，规划每阶段的学习重心与优先级',
+    icon: clawAvatar('学习规划师'),
   },
   {
     id: 'paper-reader',
-    name: '笔记整理大师',
-    desc: '把课堂笔记与资料整理成清晰、高密度的复习材料',
-    icon: clawAvatar('笔记整理大师'),
+    name: '论文速读导师',
+    desc: '快速提炼论文核心论点与结构，省去逐字精读的时间',
+    icon: clawAvatar('论文速读导师'),
   },
   {
     id: 'material-master',
-    name: '课程辅导专家',
-    desc: '围绕知识难点深入讲解，补齐薄弱环节',
-    icon: clawAvatar('课程辅导专家'),
+    name: '资料整理大师',
+    desc: '课件、笔记、教材多源汇总，生成结构化知识清单',
+    icon: clawAvatar('资料整理大师'),
   },
   {
     id: 'exam-sprint',
-    name: '考前冲刺教练',
+    name: '考前冲刺哥',
     desc: '整合考点、梳理高频题型、生成冲刺复习计划',
-    icon: clawAvatar('考前冲刺教练'),
+    icon: clawAvatar('考前冲刺哥'),
   },
   {
     id: 'language-tutor',
-    name: '论文解读专家',
-    desc: '快速提炼论文核心论点与结构，省去逐字精读的时间',
-    icon: clawAvatar('论文解读专家'),
+    name: '外语一对一私教',
+    desc: '四六级专项突破，学术英文读写与口语表达陪练',
+    icon: clawAvatar('外语一对一私教'),
   },
   {
     id: 'paper-hunter',
-    name: '实验数据分析师',
-    desc: '整理实验数据，输出分析结论与可视化建议',
-    icon: clawAvatar('实验数据分析师'),
+    name: '论文猎手',
+    desc: '梳理论文脉络，快速定位可用观点与参考方向',
+    icon: clawAvatar('论文猎手'),
   },
   {
     id: 'preview-officer',
-    name: '论文润色专家',
-    desc: '优化论文表达、结构与逻辑，让稿件更顺畅专业',
-    icon: clawAvatar('论文润色专家'),
+    name: '预习官',
+    desc: '课前生成预习卡片，提炼本节重点与预习问题',
+    icon: clawAvatar('预习官'),
   },
   {
     id: 'goal-coach',
-    name: '论文评审顾问',
-    desc: '按评审维度检查论文问题，给出修改建议',
-    icon: clawAvatar('论文评审顾问'),
+    name: '目标拆解教练',
+    desc: '把大目标拆成可执行的小任务，带您一步步落地',
+    icon: clawAvatar('目标拆解教练'),
   },
 ];
 
@@ -4261,7 +4237,7 @@ let CLAW_TASK_ITEMS = [
     id: 'mail-digest',
     title: '每日邮件总结',
     icon: '↻',
-    avatar: clawAvatar('公众号主笔'),
+    avatar: clawAvatar('公众号内容助手'),
     enabled: true,
     desc:
       '每天18:00的时候，总结下我电脑里今天收到的邮件，主要是识别其中包含的重点信息，那些订阅的广告啊，验证码啊啥的都过滤掉。',
@@ -4952,22 +4928,22 @@ const EXPERT_MARKET_SUBTABS = {
 
 const EXPERT_MARKET_SECONDARY_ORDER = {
   '数据分析': ['自媒体数据分析专家', '高级数据分析师', 'SQL代码工程师', '库存预测专家', 'ROI精算师'],
-  '市场营销': ['广告创意顾问', '竞品情报特工', '趋势研究员', '跨境社媒营销官', '种草图文设计师', '跨境电商情报探长', '广告投放优化师', '库存预测专家', '销售教练'],
+  '市场营销': ['广告创意策略师', '竞品情报特工', '趋势研究员', '跨境社媒营销官', '种草图文设计师', '跨境电商情报探长', 'PPC竞价策略师', '库存预测专家', '销售教练'],
 };
 
 const EXPERT_MARKET_AGENT_META = {
-  '课程预习导师': { primary: '学习', secondary: '学习备考', desc: '课前知识点深入讲解' },
-  '笔记整理大师': { primary: '学习', secondary: '学习备考', desc: '将杂乱零散的笔记进行整理，让其具备高知识密度和可读性' },
+  '预习官': { primary: '学习', secondary: '学习备考', desc: '课前知识点深入讲解' },
+  '笔记整理师': { primary: '学习', secondary: '学习备考', desc: '将杂乱零散的笔记进行整理，让其具备高知识密度和可读性' },
   '课程辅导专家': { primary: '学习', secondary: '学习备考', desc: '对知识难点深入讲解' },
-  '考前冲刺教练': { primary: '学习', secondary: '学习备考', desc: '专治考前焦虑，临阵磨枪找我就对了' },
+  '考前冲刺哥': { primary: '学习', secondary: '学习备考', desc: '专治考前焦虑，临阵磨枪找我就对了' },
   '外语一对一私教': { primary: '学习', secondary: '学习备考', desc: '全球百种语言，一对一学习' },
   '论文猎手': { primary: '学习', secondary: '学术研究', desc: '你只需指定主题，自动为你挖掘出最新最热的论文' },
-  '论文解读专家': { primary: '学习', secondary: '学术研究', desc: '再硬核的论文也给你掰开揉碎讲明白' },
+  'AI论文速读导师': { primary: '学习', secondary: '学术研究', desc: '再硬核的论文也给你掰开揉碎讲明白' },
   '论文速读导师': { primary: '学习', secondary: '学术研究', desc: '再硬核的论文也给你掰开揉碎讲明白' },
   '资料整理大师': { primary: '学习', secondary: '学术研究', desc: '一堆乱资料秒变结构化文档' },
   '实验数据分析师': { primary: '学习', secondary: '学术研究', desc: '探索性实验分析、数据整理、数据可视化' },
-  '论文润色专家': { primary: '学习', secondary: '学术研究', desc: '对论文的文案、结构进行优化' },
-  '论文评审顾问': { primary: '学习', secondary: '学术研究', desc: '支持全面审稿和指定维度审稿' },
+  '论文优化助理': { primary: '学习', secondary: '学术研究', desc: '对论文的文案、结构进行优化' },
+  '论文评审专家': { primary: '学习', secondary: '学术研究', desc: '支持全面审稿和指定维度审稿' },
   '学习规划师': { primary: '学习', secondary: '学业规划', desc: '量身定制每日学习计划，跟着走就行' },
   '目标拆解教练': { primary: '学习', secondary: '学业规划', desc: '年初立的flag还在吗？让我帮你拆到每天能做到' },
   '留学规划顾问': { primary: '学习', secondary: '学业规划', desc: '多国申请+选校定位+文书指导，圆梦名校' },
@@ -4979,8 +4955,8 @@ const EXPERT_MARKET_AGENT_META = {
   '高级项目经理': { primary: '工作', secondary: '产品设计', desc: '项目规划跟踪/风险管控，按时交付不延期' },
   '竞品情报特工': { primary: '工作', secondary: '产品设计', secondaryAlso: ['市场营销'], desc: '15分钟输出竞品深度报告，11个维度一个不落' },
   '趋势研究员': { primary: '工作', secondary: '产品设计', secondaryAlso: ['市场营销'], desc: '市场情报+趋势预测，先人一步看到机会' },
-  '用户反馈分析师': { primary: '工作', secondary: '产品设计', desc: '反馈归类+洞察提取+优先级排序，迭代有方向' },
-  '前端开发工程师': { primary: '工作', secondary: '技术开发', desc: '精通主流前端技术栈，帮你实现高质量界面' },
+  '反馈分析师': { primary: '工作', secondary: '产品设计', desc: '反馈归类+洞察提取+优先级排序，迭代有方向' },
+  '前端开发者': { primary: '工作', secondary: '技术开发', desc: '精通主流前端技术栈，帮你实现高质量界面' },
   '后端架构师': { primary: '工作', secondary: '技术开发', desc: '微服务+分布式+高可用，后端架构全局把控' },
   '微信小程序开发助手': { primary: '工作', secondary: '技术开发', desc: 'WXML/WXSS+微信支付+云开发，快速上线' },
   'DevOps自动工程师': { primary: '工作', secondary: '技术开发', desc: 'CI/CD流水线搭建，持续交付不停歇' },
@@ -4991,14 +4967,14 @@ const EXPERT_MARKET_AGENT_META = {
   '提示词工程师': { primary: '工作', secondary: '技术开发', desc: '帮你写出高效提示词，AI输出效果翻倍' },
   'SQL代码工程师': { primary: '工作', secondary: '技术开发', secondaryAlso: ['数据分析'], desc: '说话就出SQL，让不会写代码的人也能玩转数据' },
   '售前工程师': { primary: '工作', secondary: '技术开发', desc: '技术方案+Demo演示+POC验证，赢单利器' },
-  '广告创意顾问': { primary: '工作', secondary: '市场营销', desc: '素材文案到A/B测试，最大化广告转化效果' },
+  '广告创意策略师': { primary: '工作', secondary: '市场营销', desc: '素材文案到A/B测试，最大化广告转化效果' },
   '跨境社媒营销官': { primary: '工作', secondary: '市场营销', desc: '一条指令搞定六大平台内容生产与发布' },
   '种草图文设计师': { primary: '工作', secondary: '市场营销', desc: '给个主题，自动出每页文案+排版+配色方案' },
   '销售教练': { primary: '工作', secondary: '市场营销', desc: '话术+客户管理+成交技巧，全面提升成交率' },
   '微博运营策略师': { primary: '工作', secondary: '内容运营', desc: '话题运营+超话管理，品牌声量翻倍' },
-  '抖音运营专家': { primary: '工作', secondary: '内容运营', desc: '让视频上热榜不靠玄学' },
-  '公众号主笔': { primary: '工作', secondary: '内容运营', desc: '给主题即出稿，策划到排版一步到位' },
-  '小红书爆款顾问': { primary: '工作', secondary: '内容运营', desc: '从选题到爆款全流程服务，你负责拍我负责火' },
+  '抖音运营策略师': { primary: '工作', secondary: '内容运营', desc: '让视频上热榜不靠玄学' },
+  '公众号内容助手': { primary: '工作', secondary: '内容运营', desc: '给主题即出稿，策划到排版一步到位' },
+  '小红书爆款操盘手': { primary: '工作', secondary: '内容运营', desc: '从选题到爆款全流程服务，你负责拍我负责火' },
   '自媒体文案大师': { primary: '工作', secondary: '内容运营', desc: '从种草文到短视频脚本，全平台爆款文案一站搞定' },
   '自媒体热点猎手': { primary: '工作', secondary: '内容运营', desc: '7x24h全网热搜雷达，只推送你领域相关的精准选题弹药' },
   '自媒体数据分析专家': { primary: '工作', secondary: '内容运营', secondaryAlso: ['数据分析'], desc: '用数据说话，帮你看清每条内容的真实表现和优化方向' },
@@ -5006,15 +4982,15 @@ const EXPERT_MARKET_AGENT_META = {
   'TikTok策略师': { primary: '工作', secondary: '内容运营', desc: '病毒式内容+算法优化，全球流量把抓' },
   '跨境电商情报探长': { primary: '工作', secondary: '市场营销', desc: '对打了个喷嚏我都知道，7x24情报不断线' },
   '库存预测专家': { primary: '工作', secondary: '市场营销', secondaryAlso: ['数据分析'], desc: '需求预测+安全库存+大促备货，精准管库存' },
-  '广告投放优化师': { primary: '工作', secondary: '市场营销', desc: '关键词+出价+质量分优化，最大化广告ROI' },
+  'PPC竞价策略师': { primary: '工作', secondary: '市场营销', desc: '关键词+出价+质量分优化，最大化广告ROI' },
   '高级数据分析师': { primary: '工作', secondary: '数据分析', desc: '自动解析数据背后的洞察与建议' },
-  'A股盯盘师': { primary: '工作', secondary: '财务管理', desc: '7x24小时盯盘，异动第一时间送达' },
-  '基金配置顾问': { primary: '工作', secondary: '财务管理', desc: '3000+只基金我帮你翻，只挑真正能拿住的' },
-  '股票诊断师': { primary: '工作', secondary: '财务管理', desc: '深度扫描，看透每只股的价值与风险' },
+  'A股行情追踪专家': { primary: '工作', secondary: '财务管理', desc: '7x24小时盯盘，异动第一时间送达' },
+  '基金掘金师': { primary: '工作', secondary: '财务管理', desc: '3000+只基金我帮你翻，只挑真正能拿住的' },
+  '个股诊断专家': { primary: '工作', secondary: '财务管理', desc: '深度扫描，看透每只股的价值与风险' },
   '金融风控分析师': { primary: '工作', secondary: '财务管理', desc: '信用评估+反欺诈+合规审查，全面防控风险' },
   '发票管理专家': { primary: '工作', secondary: '财务管理', desc: '增值税发票+金税系统+三单匹配，票据无忧' },
   'ROI精算师': { primary: '工作', secondary: '财务管理', secondaryAlso: ['数据分析'], desc: '这笔钱花得值不值？算完你心里就有数了' },
-  '宏观经济分析师': { primary: '工作', secondary: '财务管理', desc: '利率变了？政策又吹了？我帮你拆明白' },
+  '宏观经济专家': { primary: '工作', secondary: '财务管理', desc: '利率变了？政策又吹了？我帮你拆明白' },
   '合同审查专家': { primary: '工作', secondary: '法务合规', desc: '条款风险逐条识别，修改建议一步到位' },
   '制度文件撰写专家': { primary: '工作', secondary: '法务合规', desc: '帮你起草和审查各类制度文件' },
   '文件对比专家': { primary: '工作', secondary: '法务合规', desc: '100页件哪里改了？我快速给你标出来' },
@@ -5051,10 +5027,10 @@ const EXPERT_MARKET_TEAMS = [
     category: '一人公司',
     added: false,
     experts: [
-      { name: '课程预习导师', desc: '课前梳理课程重点，提前建立知识框架', icon: clawAgentIcon('课程预习导师', 0) },
-      { name: '笔记整理大师', desc: '将杂乱零散的笔记整理成高密度复习材料', icon: clawAgentIcon('笔记整理大师', 1) },
-      { name: '课程辅导专家', desc: '围绕知识难点深入讲解，补齐薄弱环节', icon: clawAgentIcon('课程辅导专家', 2) },
-      { name: '考前冲刺教练', desc: '整合考点、梳理高频题型、生成冲刺复习计划', icon: clawAgentIcon('考前冲刺教练', 3) },
+      { name: '考前冲刺哥', desc: '整合考点、梳理高频题型、生成冲刺复习计划', icon: clawAgentIcon('考前冲刺哥', 3) },
+      { name: 'AI论文速读导师', desc: '梳理学期节奏，规划每阶段的学习重心与优先级', icon: clawAgentIcon('AI论文速读导师', 1) },
+      { name: '深夜解压大师', desc: '深夜陪伴：情绪疏导与倾听助眠', icon: clawAgentIcon('深夜解压大师', 0) },
+      { name: '资料整理大师', desc: '课件、笔记、教材多源汇总，生成结构化知识清单', icon: clawAgentIcon('资料整理大师', 2) },
     ],
   },
   {
@@ -5065,10 +5041,10 @@ const EXPERT_MARKET_TEAMS = [
     category: '学术教育',
     added: false,
     experts: [
-      { name: '论文解读专家', desc: '快速提炼论文核心论点与结构，省去逐字精读的时间', icon: clawAgentIcon('论文解读专家', 0) },
-      { name: '实验数据分析师', desc: '整理实验数据，输出分析结论与可视化建议', icon: clawAgentIcon('实验数据分析师', 1) },
-      { name: '论文润色专家', desc: '优化论文表达、结构与逻辑，让稿件更顺畅专业', icon: clawAgentIcon('论文润色专家', 2) },
-      { name: '论文评审顾问', desc: '按评审维度检查论文问题，给出修改建议', icon: clawAgentIcon('论文评审顾问', 3) },
+      { name: '学习规划师', desc: '量身定制每日学习计划，跟着走就行', icon: clawAgentIcon('学习规划师', 0) },
+      { name: '目标拆解教练', desc: '多国申请+选校定位+文书指导，圆梦名校', icon: clawAgentIcon('目标拆解教练', 7) },
+      { name: '留学规划顾问', desc: '多国申请+选校定位+文书指导，圆梦名校', icon: clawAgentIcon('留学规划顾问', 5) },
+      { name: '高考志愿填报顾问', desc: '院校匹配+专业推荐+分数线预测，不浪费分', icon: clawAgentIcon('高考志愿填报顾问', 0) },
     ],
   },
   {
@@ -5087,9 +5063,9 @@ const EXPERT_MARKET_TEAMS = [
           '我是竞品雷达，一只24小时不眨眼的跨境电商情报探长。盯着竞品的价格、Listing、评论和上新的每一个风吹草动，是我的本能。数据就是我的眼睛，异常就是我的猎物。价格变动超5%日报汇总，超15%即时告警；差评暴增秒级响应；Listing改动每日对比。只做合规数据采集，情报归情报，决策归你。',
         skills: ['online-search', 'competitor-monitoring', 'price-tracker', 'amazon-competitor-analyzer'],
       },
-      { name: '广告创意顾问', desc: '素材文案到A/B测试，最大化广告转化效果', icon: clawAgentIcon('广告创意顾问', 1) },
-      { name: '广告投放优化师', desc: '关键词+出价+质量分优化，最大化广告ROI', icon: clawAgentIcon('广告投放优化师', 2) },
-      { name: '用户反馈分析师', desc: '反馈归类+洞察提取+优先级排序，迭代有方向', icon: clawAgentIcon('用户反馈分析师', 5) },
+      { name: 'TikTok策略师', desc: '病毒式内容+算法优化，全球流量把抓', icon: clawAgentIcon('TikTok策略师', 1) },
+      { name: '库存预测专家', desc: '需求预测+安全库存+大促备货，精准管库存', icon: clawAgentIcon('库存预测专家', 2) },
+      { name: 'PPC竞价策略师', desc: '关键词+出价+质量分优化，最大化广告ROI', icon: clawAgentIcon('PPC竞价策略师', 5) },
     ],
   },
   {
@@ -5102,7 +5078,7 @@ const EXPERT_MARKET_TEAMS = [
     experts: [
       { name: '产品经理', desc: 'PRD+路线图+产品全生命周期，从0到1交付', icon: clawAgentIcon('产品经理', 3) },
       { name: 'UI设计师', desc: '设计系统+组件库，高质量界面快速生成', icon: clawAgentIcon('UI设计师', 0) },
-      { name: '前端开发工程师', desc: '精通主流前端技术栈，帮你实现高质量界面', icon: clawAgentIcon('前端开发工程师', 7) },
+      { name: '前端开发者', desc: '精通主流前端技术栈，帮你实现高质量界面', icon: clawAgentIcon('前端开发者', 7) },
       { name: '后端架构师', desc: '微服务+分布式+高可用，后端架构全局把控', icon: clawAgentIcon('后端架构师', 4) },
     ],
   },
@@ -5114,10 +5090,10 @@ const EXPERT_MARKET_TEAMS = [
     category: '金融',
     added: false,
     experts: [
-      { name: 'A股盯盘师', desc: '7x24小时盯盘，异动第一时间送达', icon: clawAgentIcon('A股盯盘师', 1) },
-      { name: '宏观经济分析师', desc: '利率变了？政策又吹了？我帮你拆明白', icon: clawAgentIcon('宏观经济分析师', 3) },
-      { name: '基金配置顾问', desc: '3000+只基金我帮你筛，只挑真正能拿住的', icon: clawAgentIcon('基金配置顾问', 2) },
-      { name: '股票诊断师', desc: '深度扫描，看透每只股的价值与风险', icon: clawAgentIcon('股票诊断师', 7) },
+      { name: 'A股行情追踪专家', desc: '7x24小时盯盘，异动第一时间送达', icon: clawAgentIcon('A股行情追踪专家', 1) },
+      { name: '宏观经济专家', desc: '利率变了？政策又吹了？我帮你拆明白', icon: clawAgentIcon('宏观经济专家', 3) },
+      { name: '基金掘金师', desc: '3000+只基金我帮你翻，只挑真正能拿住的', icon: clawAgentIcon('基金掘金师', 2) },
+      { name: '个股诊断专家', desc: '深度扫描，看透每只股的价值与风险', icon: clawAgentIcon('个股诊断专家', 7) },
     ],
   },
   {
@@ -5129,9 +5105,9 @@ const EXPERT_MARKET_TEAMS = [
     added: false,
     experts: [
       { name: '自媒体热点猎手', desc: '7x24h全网热搜雷达，只推送你领域相关的精准选题弹药', icon: clawAgentIcon('自媒体热点猎手', 0) },
-      { name: '抖音运营专家', desc: '让视频上热榜不靠玄学', icon: clawAgentIcon('抖音运营专家', 5) },
-      { name: '小红书爆款顾问', desc: '从选题到爆款全流程服务，你负责拍我负责火', icon: clawAgentIcon('小红书爆款顾问', 6) },
-      { name: '公众号主笔', desc: '给主题即出稿，策划到排版一步到位', icon: clawAgentIcon('公众号主笔', 4) },
+      { name: '抖音运营策略师', desc: '让视频上热榜不靠玄学', icon: clawAgentIcon('抖音运营策略师', 5) },
+      { name: '小红书爆款操盘手', desc: '从选题到爆款全流程服务，你负责拍我负责火', icon: clawAgentIcon('小红书爆款操盘手', 6) },
+      { name: '公众号内容助手', desc: '给主题即出稿，策划到排版一步到位', icon: clawAgentIcon('公众号内容助手', 4) },
     ],
   },
 ];
@@ -5409,7 +5385,7 @@ function renderClawAgentHome() {
   const isXiaotian = (agent.id || agent.name) === (CLAW_XIAOTIAN_HOME.id || CLAW_XIAOTIAN_HOME.name);
   main?.classList.toggle('is-custom-agent-home', !isXiaotian);
   if (avatar) {
-    avatar.src = isXiaotian ? './custom-assets/claw-flow/xiaotian-avatar.png' : agent.icon || CLAW_XIAOTIAN_HOME.icon;
+    avatar.src = isXiaotian ? './custom-assets/claw-flow/claw-avatar-hero-clean.png' : agent.icon || CLAW_XIAOTIAN_HOME.icon;
     avatar.alt = agent.name || '';
   }
   if (title) title.innerHTML = `Hi，我是<span class="claw-agent-name-underline">${escapeHtml(agent.name || '小天')}</span>`;
@@ -6257,7 +6233,7 @@ function finishClawExpertSetup(queryText, options = {}) {
   article.appendChild(createClawUserBubble(queryText));
   scrollClawDialogToBottom();
 
-  const replyText = '好的，8 位专家智能体已经配置到位。\n接下来，你可以在输入框里 @ 智能体（比如 @ 课程预习导师 或 @ 论文解读专家），让他们开始干活。也可以直接告诉我的问题，我来搞定。现在手头有什么需要处理的吗？';
+  const replyText = '好的，8 位专家智能体已经配置到位。\n接下来，你可以在输入框里 @ 智能体（比如 @ 预习官 或 @ 论文猎手），让他们开始干活。也可以直接告诉我的问题，我来搞定。现在手头有什么需要处理的吗？';
   setTimeout(() => {
     const reply = createClawAddedReply();
     article.appendChild(reply);
